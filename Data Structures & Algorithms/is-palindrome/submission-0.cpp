@@ -1,0 +1,17 @@
+using namespace std;
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        string str = "";
+        for(char ch: s) {
+            if(isdigit(ch))
+                str += ch;
+            else if(isalpha(ch))
+                str += tolower(ch);
+        }
+        int i = 0, j = str.size()-1;
+        while(i <= j ) 
+          if(str[i++] != str[j--])  return false;
+        return true;
+    }
+};
